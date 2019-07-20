@@ -1,6 +1,6 @@
 {
-  "name": "@prisma-cms/component-boilerplate",
-  "version": "1.4.0",
+  "name": "@prisma-cms/performance",
+  "version": "1.4.1",
   "private": false,
   "main": "lib/App.js",
   "scripts": {

@@ -7,6 +7,7 @@ class DevPageLayout extends PureComponent {
 
   static contextType = Context;
 
+  state = {}
 
   render(content) {
 

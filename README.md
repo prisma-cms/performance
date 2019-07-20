@@ -1,21 +1,42 @@
 
 
-## Tests module for [@prisma-cms](https://github.com/prisma-cms/boilerplate)
+# Prisma-CMS Performance
 
-## Get schema from @prisma-cms
-1. yarn get-api-schema -e http://localhost:4000
-2. yarn build-api-fragments
+Performance testing component for [@prisma-cms](https://github.com/prisma-cms/boilerplate) and any other React components.
 
-### Run tests
-1. Start @prisma-cms/server
-2. Start @prisma-cms/front
-3. `yarn test --testURL=http://localhost:3000`
 
-### Test with serviceWorker
-`TEST_WORKERS=true yarn test --testURL=http://localhost:3000`
+## Install
 
-### Test coverage
-`yarn test --testURL=http://localhost:3000 --coverage`
-More jest arguments see [jest docs](https://jestjs.io/docs/en/cli.html).
+### yarn
 
-### Compatibility
+```
+yarn add -D @prisma-cms/performance
+```
+
+### npm
+```
+npm i @prisma-cms/performance --save-dev
+```
+
+## Usage
+
+Pass any props for updating check
+```
+import React, { Component } from 'react';
+import PrismaCmsPerformanceTester from "@prisma-cms/performance";
+
+export default class Test extends Component {
+
+  render(){
+
+    return <PrismaCmsPerformanceTester 
+      props={this.props}
+      state={this.state}
+      context={this.context}
+    />
+  }
+
+}
+```
+
+See the browser console to detect which properties change when the Test component is updated.

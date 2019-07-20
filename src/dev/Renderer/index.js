@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from "prop-types";
 
 import App, {
-  ContextProvider,
-  SubscriptionProvider,
+  // ContextProvider,
+  // SubscriptionProvider,
 } from "../../App";
 
 import { Renderer as PrismaCmsRenderer } from '@prisma-cms/front'
@@ -72,15 +72,15 @@ class DevRenderer extends PrismaCmsRenderer {
   }
 
 
-  renderWrapper() {
+  // renderWrapper() {
 
-    return <ContextProvider>
-      <SubscriptionProvider>
-        {super.renderWrapper()}
-      </SubscriptionProvider>
-    </ContextProvider>;
+  //   return <ContextProvider>
+  //     <SubscriptionProvider>
+  //       {super.renderWrapper()}
+  //     </SubscriptionProvider>
+  //   </ContextProvider>;
 
-  }
+  // }
 
 
   render() {
