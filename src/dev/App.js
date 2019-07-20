@@ -1,34 +1,21 @@
-import React, { PureComponent } from 'react';
-import PropTypes from "prop-types";
+import React, { PureComponent, Fragment } from 'react';
+import PropTypes from 'prop-types';
 
-import PrismaCmsApp from '@prisma-cms/front'
+import App from '../App';
 
-// import * as queryFragments from "../schema/generated/api.fragments";
+export default class DevApp extends App {
 
-import DevRenderer from "./Renderer";
-
-
-export default class DevApp extends PureComponent {
-
-  // static propTypes = {
-  //   queryFragments: PropTypes.object.isRequired,
-  // }
-
-  static defaultProps = {
-    // queryFragments,
-  }
 
   render() {
 
-    const {
-      ...other
-    } = this.props;
+    return <Fragment>
+      <div
+        id="prisma-cms-performance-tester"
+      >
+      </div>
 
-    return <PrismaCmsApp
-      Renderer={DevRenderer}
-      // pure={true}
-      {...other}
-    />
+      {super.render()}
+    </Fragment>
   }
-}
 
+}

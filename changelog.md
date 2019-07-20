@@ -1,3 +1,8 @@
+1.4.2
+=================================
+- Upgrade boilerplate
+- Code refactoring
+
 1.4.1
 =================================
 - First release

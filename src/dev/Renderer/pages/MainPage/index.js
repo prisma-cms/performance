@@ -2,7 +2,8 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import Page from "../layout";
-import App from '../../../../App';
+import DevApp from '../../../App';
+
 
 class DevMainPage extends Page {
 
@@ -35,6 +36,13 @@ class DevMainPage extends Page {
   render() {
 
     const {
+
+      /**
+       * https://github.com/ReactTraining/react-router/issues/5665
+       */
+      staticContext,
+
+      children,
       ...other
     } = this.props;
 
@@ -45,10 +53,50 @@ class DevMainPage extends Page {
      * а не простое скалярное значение.
      */
 
+    // <Fragment>
+    //   <div>
+    //     <button
+    //       onClick={this.forceUpdateBind}
+    //     >
+    //       Force update
+    //       </button>
+
+    //     <button
+    //       onClick={this.forceUpdateFakeBind}
+    //     >
+    //       Force update with fake
+    //       </button>
+
+    //     <button
+    //       onClick={this.setStateBind}
+    //     >
+    //       Change state
+    //       </button>
+
+    //   </div>
+
+    //   <App
+    //     props={this.props}
+    //     state={this.state}
+    //     context={this.context}
+    //   // children={(<div>
+    //   //   Children
+    //   // </div>)}
+    //   >
+    //     {/* {new Date().toString()} */}
+    //     Text
+    //     </App>
+
+    // </Fragment>
+
+
     return super.render(
 
-      <Fragment>
-        <div>
+
+      <div>
+        <div
+          id="buttons"
+        >
           <button
             onClick={this.forceUpdateBind}
           >
@@ -59,29 +107,29 @@ class DevMainPage extends Page {
             onClick={this.forceUpdateFakeBind}
           >
             Force update with fake
-          </button>
+            </button>
 
           <button
             onClick={this.setStateBind}
           >
             Change state
           </button>
-
         </div>
 
-        <App
-          props={this.props}
-          state={this.state}
-          context={this.context}
-        // children={(<div>
-        //   Children
-        // </div>)}
+        <div
+          id="content"
         >
-          {/* {new Date().toString()} */}
-          Text
-        </App>
+          <DevApp
+            children={children || "Main page"}
+            props={this.props}
+            state={this.state}
+            context={this.context}
+            {...other}
+          >
+          </DevApp>
+        </div>
 
-      </Fragment>
+      </div>
     );
   }
 }

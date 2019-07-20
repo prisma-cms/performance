@@ -64,29 +64,6 @@ class PrismaCmsPerformanceTester extends Component {
     prefix: "PrismaCmsPerformanceTester",
   }
 
-  // componentWillUpdate(prevProps, prevState) {
-
-  //   const keys = Object.keys(this.props);
-
-  //   keys.map(key => {
-
-  //     const value = this.props[key];
-
-  //     const prevValue = prevProps[key];
-
-  //     if (value !== undefined && prevValue !== undefined && value !== prevValue) {
-
-  //       console.log(`PrismaCmsPerformanceTester ${key} changed`, value, prevValue);
-
-  //     }
-
-  //   });
-
-  //   super.componentDidUpdate && super.componentDidUpdate(prevProps, prevState);
-
-  // }
-
-
 
   render() {
 
